@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Footballscore</title>
+	<link rel="shortcut icon" href="images/ico.png" type="image/x-icon">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="js/script.js" type="text/javascript"></script>
+	<script src="js/navigation.js" type="text/javascript"></script>
+	<script src="js/js1.js" type="text/javascript"></script>
+	
+<style type="text/css">
+	a.button {
+		display: block;
+		width: 160px;
+		margin: 20px 50px;
+		text-align: center;	
+	  	font-weight: 700;
+	  	color: white;
+	  	text-decoration: none;
+	  	padding: .8em 1em calc(.8em + 3px);
+	  	border-radius: 3px;
+	  	background: rgb(78,125,185);
+	  	box-shadow: 0 -3px rgb(72,87,140) inset;
+	  	transition: 0.2s;
+	} 
+	a.button:hover { background: rgb(78, 185, 161); /*rgb(53, 167, 110);*/ }
+	a.button:active {
+	  	background: rgb(33,147,90);
+	  	box-shadow: 0 3px rgb(33,147,90) inset;
+	}
+</style>
+
+</head>
+<body>
+<div id="main">
+		<div id="banner">
+			<img src="images/banner.png" alt="picture loading..."/> 
+		</div>
+		<div class="tab_wrapper">
+			<div id="tab_background">
+				<div ID="site_name">FOOTBALLSCORE.IN.NET</div>
+				<div class="tabs">
+					<span class="tab">РЕЗУЛЬТАТЫ ONLINE</span>
+					<span class="tab">ТАБЛИЦЫ</span>
+					<span class="tab">НОВОСТИ</span>
+					<span class="tab">ЛИЧНЫЙ КАБИНЕТ</span>      
+				</div>
+			</div>
+			<div id="tab_content">								
+				<div class="tab_item">
+					<div class="divRight">
+						<div id="dropdown_date" class="wrapper_dropdown">
+							<span id="dropdown_date_title">Сегодня</span>
+							<ul class="dropdown"></ul>
+						</div>								
+						<div class="divRight_item"> 
+							<h2>НОВОСТИ</h2>
+							<div id="newsTitles">
+								<!--<div class="loadingAnimation">
+									<img src="images/loading.gif" alt=""/>
+								</div>-->
+							</div>
+						</div>						
+					</div>
+					
+					<table id="tableResults_today" class="tableResults"></table>
+					<table id="tableResults_notToday" class="tableResults"></table>
+					<div class="loadingAnimation" id="tableResultsLoadingAnimation">
+						<img src="images/loading.gif" alt=""/>
+					</div>
+				</div>
+				<div class="tab_item">
+					<div class="divRight">
+						<div id="dropdown_league" class="wrapper_dropdown">
+							<span id="dropdown_league_title">АПЛ</span>
+							<ul class="dropdown" style="text-align: left;">
+								<li><img class="flag_ico" src="images/england.jpg" alt="" />АПЛ</li>
+								<li><img class="flag_ico" src="images/germany.jpg" alt=""/>Бундеслига</li>
+								<li><img class="flag_ico" src="images/spain.jpg" alt=""/>Примера</li>
+								<li><img class="flag_ico" src="images/italy.jpg" alt=""/>Серия А</li>
+								<li><img class="flag_ico" src="images/france.jpg" alt=""/>Лига 1</li>
+								<li><img class="flag_ico" src="images/ukraine.jpg" alt=""/>УПЛ</li>
+								<li><img class="flag_ico" src="images/russia.jpg" alt=""/>РПЛ</li>
+								<li><img class="flag_ico" src="images/le.jpg" alt=""/>leage</li>
+								<li><img class="flag_ico" src="images/lch.jpg" alt=""/>champions</li>
+							</ul>
+						</div>
+						<!--<div class="myleague"> </div>-->
+					</div>					
+				</div>
+				<div class="tab_item">					
+					<table id="fullNews" class="tableNews"></table>
+				</div>
+				<div class="tab_item">
+					<div id="">					
+						<a class="button" target="_blank" href="registrationForm.jsp">Регистрация</a>
+						<br>
+						<a class="button" target="_blank" href="authenticationForm.jsp">Вход</a>
+					</div>
+				</div>						
+				
+			</div>
+		</div>
+		
+		<div id="footer">
+			<div style="padding:1em;">
+				Контактная информация: <br>
+				E-mail: footballscore@gmail.com<br>
+				© 2015 Все права защищены.
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">		
+		getAllEvents(getFullDate(0), document.getElementById("tableResults_today"));
+		timerBlink = setInterval(blink, 500);
+	
+	/*
+		$(".tableResults").hide();
+		$("#tableResults_today").show();
+		dateOfEnter = getFullDate(0);
+		getAllEvents(getFullDate(0), document.getElementById("tableResults_today"));
+		getNews();
+		
+		
+	*/
+		
+		//setInterval(getChangedData, 21000);
+		//setInterval(getNews, 1000000);
+	
+	/*
+		setTimeout(function() {
+			clearInterval(timerBlink);
+			alert("стоп1");
+		}, 600000);
+*/
+	</script>
+</body>
+</html>
